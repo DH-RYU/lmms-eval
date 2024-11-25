@@ -1,0 +1,14 @@
+dataset_path: arrow
+dataset_kwargs:
+  data_files:
+    test: /metavision/vol2/dh_repo/data/lmms_eval/json/mot_track_yn_test.hf/data-00000-of-00001.arrow
+task: "mot_track_yn_test"
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.mot_doc_to_visual
+doc_to_text: !function utils.mot_doc_to_text
+doc_to_target: "answer"
+generation_kwargs:
+  max_new_tokens: 16
+  temperature: 0
+  do_sample: False
